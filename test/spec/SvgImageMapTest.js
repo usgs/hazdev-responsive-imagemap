@@ -2,7 +2,7 @@
 
 define([
 	'chai',
-	'SvgImageMap'
+	'svgimagemap/SvgImageMap'
 ], function (
 	chai,
 	SvgImageMap
