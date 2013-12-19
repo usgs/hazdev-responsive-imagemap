@@ -1,10 +1,10 @@
 {
-  "name": "hazdev-responsive-imagemap",
+  "name": "hazdev-svgimagemap",
   "version": "0.0.2",
   "homepage": "http://earthquake.usgs.gov/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/usgs/hazdev-responsive-imagemap.git"
+    "url": "https://github.com/usgs/hazdev-svgimagemap.git"
   },
   "description": "An awesome web app.",
   "author": {
