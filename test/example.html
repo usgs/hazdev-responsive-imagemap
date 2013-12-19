@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>SVG Imagemap test</title>
-	<link rel="stylesheet" href="SvgImageMap.css"/>
+	<link rel="stylesheet" href="svgimagemap/SvgImageMap.css"/>
 	<style>
 		/** add mouseover outline to paths. */
 		.testsvg > svg > path:hover,
@@ -28,7 +28,7 @@
 			}
 		});
 
-		require(['SvgImageMap'], function (SvgImageMap) {
+		require(['svgimagemap/SvgImageMap'], function (SvgImageMap) {
 			new SvgImageMap({
 				el: document.querySelector('.testsvg'),
 				imageUrl: 'data/usb000ldeh_ciim.jpg',
