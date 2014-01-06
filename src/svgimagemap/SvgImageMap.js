@@ -15,6 +15,8 @@ define([
 		el: null,
 		// image url
 		imageUrl: null,
+		// image alt,
+		imageAlt: null,
 		// imagemap url
 		mapUrl: null,
 		// imagemap name (optional)
@@ -30,6 +32,8 @@ define([
 	 * @param options {Object}
 	 * @param options.imageUrl {String}
 	 *        url to image
+	 * @param options.imageAlt {String}
+	 *        alt attribute for image.
 	 * @param options.className {String}
 	 *        classname for wrapper element.
 	 *
@@ -98,6 +102,7 @@ define([
 			// clean up load event listener
 			image.removeEventListener('load', _imageOnLoad);
 		});
+		image.setAttribute('alt', options.imageAlt || '');
 		el.appendChild(image);
 		image.src = options.imageUrl;
 
