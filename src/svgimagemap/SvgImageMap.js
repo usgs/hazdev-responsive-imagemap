@@ -58,7 +58,7 @@ define([
 	 */
 	var SvgImageMap = function (options) {
 		options = Util.extend({}, DEFAULTS, options);
-		this.el = options.el;
+		this._el = options.el;
 		this._options = options;
 		this.setAreas(options.areas);
 		// process additional options
@@ -70,7 +70,7 @@ define([
 	 * Free references to everything.
 	 */
 	SvgImageMap.prototype.destroy = function () {
-		this.el = null;
+		this._el = null;
 		this._options = null;
 		this._areas = null;
 		this._width = null;
@@ -93,7 +93,7 @@ define([
 		if (options.className) {
 			el.classList.add(options.className);
 		}
-		this.el = el;
+		this._el = el;
 
 		// load image
 		image = new Image();
@@ -194,7 +194,7 @@ define([
 
 		if (width && height) {
 			// set element size
-			var el = this.el;
+			var el = this._el;
 			el.setAttribute('width', width);
 			el.setAttribute('height', height);
 		}
@@ -210,7 +210,7 @@ define([
 	 *        svg content to set.
 	 */
 	SvgImageMap.prototype.setSvg = function (svg) {
-		var el = this.el,
+		var el = this._el,
 		    oldSvg = el.querySelector('svg'),
 		    parseEl;
 
