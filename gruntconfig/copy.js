@@ -10,7 +10,7 @@ var copy = {
       src: [
         '**/*.html'
       ],
-      dest: config.build + '/test'
+      dest: config.build + '/' + config.test
     },
     {
       expand: true,
@@ -18,7 +18,7 @@ var copy = {
       src: [
         '**/*.html'
       ],
-      dest: config.build + '/example'
+      dest: config.build + '/' + config.example
     }]
   }
 };

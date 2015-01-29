@@ -10,21 +10,23 @@ var connect = {
     options: {
       port: 8000,
       base: [
-        config.build + '/example',
-        config.build + '/src',
+        config.build + '/' + config.example,
+        config.build + '/' + config.src,
         config.data
-      ]
+      ],
+      open: 'http://localhost:8000/'
     }
   },
   test: {
     options: {
       port: 8001,
       base: [
-        config.build + '/test',
-        config.build + '/src',
+        config.build + '/' + config.test,
+        config.build + '/' + config.src,
         config.data,
         'node_modules'
-      ]
+      ],
+      open: 'http://localhost:8001/'
     }
   },
   dist: {
@@ -34,7 +36,8 @@ var connect = {
       base: [
         config.dist,
         config.data
-      ]
+      ],
+      open: 'http://localhost:8002/'
     }
   }
 
