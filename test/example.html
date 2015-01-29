@@ -18,24 +18,6 @@
 	<div class="testsvg"></div>
 
 	<!-- Javascripts go here -->
-	<script src="requirejs/require.js"></script>
-	<script>
-
-		require.config({
-			baseUrl: '..',
-			paths: {
-				util: 'hazdev-webutils/src/util'
-			}
-		});
-
-		require(['svgimagemap/SvgImageMap'], function (SvgImageMap) {
-			new SvgImageMap({
-				el: document.querySelector('.testsvg'),
-				imageUrl: 'data/usb000ldeh_ciim.jpg',
-				mapUrl: 'data/usb000ldeh_ciim_imap.html'
-			});
-		});
-
-	</script>
+	<script src="example.js"></script>
 </body>
 </html>
