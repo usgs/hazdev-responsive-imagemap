@@ -1,39 +1,13 @@
-require.config({
-	baseUrl: '..',
-	paths: {
-		mocha: 'mocha/mocha',
-		chai: 'chai/chai',
+/* global mocha */
+'use strict';
 
-		util: 'hazdev-webutils/src/util'
-	},
-	shim: {
-		mocha: {
-			exports: 'mocha'
-		},
-		chai: {
-			deps: ['mocha'],
-			exports: 'chai'
-		}
-	}
-});
+mocha.setup('bdd');
 
-require([
-	'mocha',
-], function (
-	mocha
-) {
-	'use strict';
+// Add each test class here as they are implemented
+require('./spec/SvgImageMapTest');
 
-	mocha.setup('bdd');
-
-	// Add each test class here as they are implemented
-	require([
-		'spec/SvgImageMapTest'
-	], function () {
-		if (window.mochaPhantomJS) {
-			window.mochaPhantomJS.run();
-		} else {
-			mocha.run();
-		}
-	});
-});
+if (window.mochaPhantomJS) {
+	window.mochaPhantomJS.run();
+} else {
+	mocha.run();
+}
