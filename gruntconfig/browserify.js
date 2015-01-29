@@ -18,7 +18,7 @@ var browserify = {
 [
   'src/svgimagemap/SvgImageMap',
   'test/index',
-  'test/example'
+  'example/index'
 ].forEach(function (bundle) {
   var targetFile = config.build + '/' + bundle + '.js';
   var sourceFile = bundle + '.js';

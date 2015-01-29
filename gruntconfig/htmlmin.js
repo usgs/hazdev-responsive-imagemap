@@ -12,7 +12,7 @@ var htmlmin = {
   }
 };
 
-htmlmin.dist.files[config.dist + '/example.html'] =
-    config.build + '/test/example.html';
+htmlmin.dist.files[config.dist + '/index.html'] =
+    config.build + '/example/index.html';
 
 module.exports = htmlmin;

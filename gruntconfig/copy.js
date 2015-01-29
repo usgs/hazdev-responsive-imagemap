@@ -11,6 +11,14 @@ var copy = {
         '**/*.html'
       ],
       dest: config.build + '/test'
+    },
+    {
+      expand: true,
+      cwd: config.example,
+      src: [
+        '**/*.html'
+      ],
+      dest: config.build + '/example'
     }]
   }
 };

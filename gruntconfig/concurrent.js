@@ -15,6 +15,10 @@ var concurrent = {
     'browserify',
     'jshint:tests'
   ],
+  example: [
+    'browserify',
+    'jshint:example'
+  ],
   dist: [
     'cssmin',
     'htmlmin',

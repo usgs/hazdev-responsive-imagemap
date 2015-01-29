@@ -4,7 +4,10 @@ var config = require('./config');
 
 var watch = {
   scss: {
-    files: [config.src + '/**/*.scss'],
+    files: [
+      config.src + '/**/*.scss',
+      config.example + '/**/*.scss'
+    ],
     tasks: ['compass:dev']
   },
   scripts: {
@@ -22,6 +25,15 @@ var watch = {
     tasks: [
       'concurrent:tests',
       'mocha_phantomjs'
+    ]
+  },
+  example: {
+    files: [
+      config.example + '/*.html',
+      config.example + '/**/*.js'
+    ],
+    tasks: [
+      'concurrent:example'
     ]
   },
   gruntfile: {

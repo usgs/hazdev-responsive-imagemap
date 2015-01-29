@@ -21,7 +21,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('test', [
 		'build',
-		'connect:dev',
+		'connect:test',
 		'mocha_phantomjs'
 	]);
 
@@ -35,6 +35,7 @@ module.exports = function (grunt) {
 		'build',
 		'compass:dev',
 		'connect:dev',
+		'connect:test',
 		'mocha_phantomjs',
 		'watch'
 	]);

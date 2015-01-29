@@ -15,6 +15,9 @@ var jshint = {
   ],
   tests: [
     config.test + '/**/*.js'
+  ],
+  example: [
+    config.example + '/**/*.js'
   ]
 };
 

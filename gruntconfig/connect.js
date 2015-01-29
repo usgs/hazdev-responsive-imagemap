@@ -10,6 +10,16 @@ var connect = {
     options: {
       port: 8000,
       base: [
+        config.build + '/example',
+        config.build + '/src',
+        config.data
+      ]
+    }
+  },
+  test: {
+    options: {
+      port: 8001,
+      base: [
         config.build + '/test',
         config.build + '/src',
         config.data,

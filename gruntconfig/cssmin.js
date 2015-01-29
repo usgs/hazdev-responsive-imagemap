@@ -3,9 +3,9 @@
 var config = require('./config');
 
 var cssmin = {
-  test: {
+  example: {
     expand: true,
-    cwd: config.build + '/test',
+    cwd: config.build + '/example',
     src: '**/*.css',
     dest: config.dist
   },
