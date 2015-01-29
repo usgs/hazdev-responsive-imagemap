@@ -8,20 +8,9 @@ var copy = {
       expand: true,
       cwd: config.test,
       src: [
-        '**/*.html',
-        'data/**'
+        '**/*.html'
       ],
       dest: config.build + '/test'
-    }]
-  },
-  dist: {
-    files: [{
-      expand: true,
-      cwd: config.test,
-      src: [
-        'data/**'
-      ],
-      dest: config.dist
     }]
   }
 };

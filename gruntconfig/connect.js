@@ -12,6 +12,7 @@ var connect = {
       base: [
         config.build + '/test',
         config.build + '/src',
+        config.data,
         'node_modules'
       ]
     }
@@ -21,7 +22,8 @@ var connect = {
       port: 8002,
       keepalive: true,
       base: [
-        config.dist
+        config.dist,
+        config.data
       ]
     }
   }

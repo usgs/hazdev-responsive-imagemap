@@ -2,6 +2,7 @@
 
 var config = {
   build: '.build',
+  data: 'data',
   dist: 'dist',
   src: 'src',
   test: 'test'
