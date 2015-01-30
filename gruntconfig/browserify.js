@@ -14,7 +14,7 @@ var browserify = {
   },
   'src/svgimagemap/SvgImageMap': {
     src: [],
-    dest: config.build + '/' + config.src + '/svgimagemap/SvgImageMap.js',
+    dest: config.build + '/' + config.src + '/hazdev-svgimagemap.js',
     options: {
       alias: [
         './' + config.src + '/svgimagemap/SvgImageMap.js:svgimagemap/SvgImageMap'
