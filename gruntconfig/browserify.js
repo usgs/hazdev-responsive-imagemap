@@ -11,20 +11,20 @@ var browserify = {
         process.cwd() + '/node_modules/hazdev-webutils/src'
       ]
     }
+  },
+  'src/svgimagemap/SvgImageMap': {
+    src: [],
+    dest: config.build + '/' + config.src + '/svgimagemap/SvgImageMap.js',
+    options: {
+      alias: [
+        './' + config.src + '/svgimagemap/SvgImageMap.js:svgimagemap/SvgImageMap'
+      ]
+    }
+  },
+  'test/index': {
+    src: config.test + '/index.js',
+    dest: config.build + '/' + config.test + '/index.js'
   }
 };
-
-// bundles
-[
-  config.src + '/svgimagemap/SvgImageMap',
-  config.test + '/index',
-  config.example + '/index'
-].forEach(function (bundle) {
-  var targetFile = config.build + '/' + bundle + '.js';
-  var sourceFile = bundle + '.js';
-
-  browserify[bundle] = {files: {}};
-  browserify[bundle].files[targetFile] = [sourceFile];
-});
 
 module.exports = browserify;
