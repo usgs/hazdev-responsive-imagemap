@@ -8,7 +8,7 @@ var SvgImageMap = require('svgimagemap/SvgImageMap');
 
 describe('SvgImageMap', function () {
 
-	var imageMap = new SvgImageMap({
+	var imageMap = SvgImageMap({
 			imageUrl: 'data/usb000ldeh_ciim.jpg',
 			mapUrl: 'data/usb000ldeh_ciim_imap.html'
 		});
