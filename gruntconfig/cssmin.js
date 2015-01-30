@@ -12,7 +12,7 @@ var cssmin = {
   src: {
     expand: true,
     cwd: config.build + '/' + config.src,
-    src: '**/*.css',
+    src: 'hazdev-svgimagemap.css',
     dest: config.dist
   }
 };
