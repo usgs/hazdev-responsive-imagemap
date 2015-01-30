@@ -17,6 +17,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('build', [
 		'clean',
 		'concurrent:build',
+		'concat:css'
 	]);
 
 	grunt.registerTask('test', [
