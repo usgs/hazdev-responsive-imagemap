@@ -8,7 +8,7 @@ var watch = {
       config.src + '/**/*.scss',
       config.example + '/**/*.scss'
     ],
-    tasks: ['compass:dev', 'concat:css']
+    tasks: ['compass:dev']
   },
   scripts: {
     files: [config.src + '/**/*.js'],

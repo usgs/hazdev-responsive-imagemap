@@ -11,9 +11,8 @@ var cssmin = {
   },
   src: {
     expand: true,
-    cwd: config.build + '/' + config.src,
-    src: 'hazdev-svgimagemap.css',
-    dest: config.dist
+    src: config.build + '/' + config.src + '/**/*.css',
+    dest: config.dist + '/hazdev-svgimagemap.css'
   }
 };
 
