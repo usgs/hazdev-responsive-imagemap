@@ -10,10 +10,11 @@ var cssmin = {
     dest: config.dist
   },
   src: {
-    expand: true,
-    src: config.build + '/' + config.src + '/**/*.css',
-    dest: config.dist + '/hazdev-svgimagemap.css'
+    files: {}
   }
 };
+
+cssmin.src.files[config.dist + '/hazdev-svgimagemap.css'] =
+    [config.build + '/' + config.src + '/**/*.css'];
 
 module.exports = cssmin;

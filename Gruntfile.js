@@ -28,6 +28,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('dist', [
 		'build',
 		'concurrent:dist',
+		'replace',
 		'connect:dist'
 	]);
 

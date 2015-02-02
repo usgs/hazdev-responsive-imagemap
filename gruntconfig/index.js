@@ -4,7 +4,6 @@ var gruntconfig = {
   browserify: require('./browserify'),
   clean: require('./clean'),
   compass: require('./compass'),
-  concat: require('./concat'),
   concurrent: require('./concurrent'),
   config: require('./config'),
   connect: require('./connect'),
@@ -13,6 +12,7 @@ var gruntconfig = {
   htmlmin: require('./htmlmin'),
   jshint: require('./jshint'),
   mocha_phantomjs: require('./mocha_phantomjs'),
+  replace: require('./replace'),
   uglify: require('./uglify'),
   watch: require('./watch'),
 
@@ -29,7 +29,8 @@ var gruntconfig = {
     'grunt-contrib-jshint',
     'grunt-contrib-uglify',
     'grunt-contrib-watch',
-    'grunt-mocha-phantomjs'
+    'grunt-mocha-phantomjs',
+    'grunt-replace'
   ]
 };
 
