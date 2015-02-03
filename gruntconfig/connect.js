@@ -26,7 +26,7 @@ var connect = {
         config.etc,
         'node_modules'
       ],
-      open: 'http://localhost:8001/'
+      open: 'http://localhost:8001/test.html'
     }
   },
   dist: {

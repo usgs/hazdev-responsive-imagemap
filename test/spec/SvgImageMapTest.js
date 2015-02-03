@@ -1,7 +1,6 @@
-/* global describe,it */
+/* global chai,describe,it */
 'use strict';
 
-var chai = require('chai');
 var expect = chai.expect;
 var SvgImageMap = require('svgimagemap/SvgImageMap');
 

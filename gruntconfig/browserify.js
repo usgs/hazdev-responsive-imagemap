@@ -12,7 +12,7 @@ var browserify = {
       ]
     }
   },
-  'src/svgimagemap/SvgImageMap': {
+  source: {
     src: [],
     dest: config.build + '/' + config.src + '/hazdev-svgimagemap.js',
     options: {
@@ -21,9 +21,14 @@ var browserify = {
       ]
     }
   },
-  'test/index': {
-    src: config.test + '/index.js',
-    dest: config.build + '/' + config.test + '/index.js'
+  test: {
+    src: config.test + '/test.js',
+    dest: config.build + '/' + config.test + '/test.js',
+    options: {
+      external: [
+        'svgimagemap/SvgImageMap'
+      ]
+    }
   }
 };
 
