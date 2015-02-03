@@ -11,15 +11,6 @@ var copy = {
         '**/*.html'
       ],
       dest: config.build + '/' + config.test
-    },
-    {
-      expand: true,
-      cwd: config.example,
-      src: [
-        '**/*.html',
-        '**/*.js'
-      ],
-      dest: config.build + '/' + config.example
     }]
   }
 };

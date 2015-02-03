@@ -7,13 +7,7 @@ var compass = {
     options: {
       sassDir: config.src,
       cssDir: config.build + '/' + config.src,
-      environment: 'development'
-    }
-  },
-  example: {
-    options: {
-      sassDir: config.example,
-      cssDir: config.build + '/' + config.example,
+      specify: config.src + '/hazdev-svgimagemap.scss',
       environment: 'development'
     }
   }

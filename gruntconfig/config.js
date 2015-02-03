@@ -2,8 +2,8 @@
 
 var config = {
   build: '.build',
-  data: 'exampledata',
   dist: 'dist',
+  etc: 'etc',
   example: 'example',
   src: 'src',
   test: 'test'
