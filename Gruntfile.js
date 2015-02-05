@@ -33,7 +33,6 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('default', [
 		'build',
-		'compass:dev',
 		'connect:dev',
 		'connect:test',
 		'mocha_phantomjs',
