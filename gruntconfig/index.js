@@ -19,7 +19,6 @@ var gruntconfig = {
     'grunt-contrib-clean',
     'grunt-concurrent',
     'grunt-contrib-compass',
-    'grunt-contrib-concat',
     'grunt-contrib-connect',
     'grunt-contrib-copy',
     'grunt-contrib-cssmin',
