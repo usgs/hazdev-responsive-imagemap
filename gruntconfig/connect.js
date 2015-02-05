@@ -9,6 +9,7 @@ var connect = {
   dev: {
     options: {
       port: 8000,
+      livereload: true,
       base: [
         config.build + '/' + config.src,
         config.example,

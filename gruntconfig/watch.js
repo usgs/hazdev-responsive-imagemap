@@ -28,13 +28,11 @@ var watch = {
     ]
   },
   example: {
-    files: [
-      config.example + '/*.html',
-      config.example + '/**/*.js'
-    ],
-    tasks: [
-      'concurrent:example'
-    ]
+    files: config.example + '/**/*',
+    tasks: ['jshint:example'],
+    options: {
+      livereload: true
+    }
   },
   gruntfile: {
     files: [
@@ -42,6 +40,12 @@ var watch = {
       'gruntfile/**/*.js'
     ],
     tasks: ['jshint:gruntfile']
+  },
+  livereload: {
+    files: config.build + '/**/*',
+    options: {
+      livereload: true
+    }
   }
 };
 
