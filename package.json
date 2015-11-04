@@ -1,6 +1,6 @@
 {
   "name": "hazdev-svgimagemap",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "http://earthquake.usgs.gov/",
   "repository": {
     "type": "git",
@@ -21,8 +21,7 @@
     "test": "grunt test"
   },
   "license": "Public Domain",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "chai": "~1.7.0",
     "grunt": "~0.4.1",
