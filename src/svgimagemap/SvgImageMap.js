@@ -288,7 +288,7 @@ var SvgImageMap = function (options) {
     // save for svg
     _width = width;
     _height = height;
-    if (width && height) {
+    if (_el && width && height) {
       // set element size
       _el.setAttribute('width', width);
       _el.setAttribute('height', height);
@@ -340,21 +340,24 @@ var SvgImageMap = function (options) {
   _setSvg = function (svg) {
     var oldSvg,
         parseEl;
-    // remove any existing svg
-    oldSvg = _this.el.querySelector('svg');
-    if (oldSvg) {
-      _el.removeChild(oldSvg);
-    }
-    // convert svg string to svg element
-    if (typeof svg === 'string') {
-      parseEl = document.createElement('div');
-      parseEl.innerHTML = svg;
-      svg = parseEl.children[0];
-      parseEl = null;
-    }
-    // insert svg
-    if (svg) {
-      _el.appendChild(svg);
+
+    if (_el) {
+      // remove any existing svg
+      oldSvg = _el.querySelector('svg');
+      if (oldSvg) {
+        _el.removeChild(oldSvg);
+      }
+      // convert svg string to svg element
+      if (typeof svg === 'string') {
+        parseEl = document.createElement('div');
+        parseEl.innerHTML = svg;
+        svg = parseEl.children[0];
+        parseEl = null;
+      }
+      // insert svg
+      if (svg) {
+        _el.appendChild(svg);
+      }
     }
   };
 
