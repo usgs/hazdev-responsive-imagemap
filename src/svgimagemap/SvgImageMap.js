@@ -183,11 +183,14 @@ var SvgImageMap = function (options) {
       _svgUrl,
       _width,
 
+      _parentDestroy,
       _setSvg;
 
-  _this = View(options);
+  _this = Object.create(View(options));
 
-  _initialize = function (options) {
+  _initialize = function () {
+    var image,
+        imageOnLoad;
     // parse options
     options = Util.extend({}, DEFAULTS, options);
     _areas = options.areas || [];
@@ -199,20 +202,23 @@ var SvgImageMap = function (options) {
     _mapUrl = options.mapUrl;
     _svgUrl = options.svgUrl;
     _width = options.width;
-
     // container element classes
     _el = _this.el;
     _el.classList.add('svgimagemap');
     if (_className) {
       _el.classList.add(_className);
     }
-
-    _this.image = new Image();
-    _this.image.addEventListener('load', _this.onImageLoad);
-    _this.image.setAttribute('alt', _imageAlt);
-    _this.image.src = _imageUrl;
-    _el.appendChild(_this.image);
-
+    // load image
+    imageOnLoad = function () {
+      _this.setSize(image.naturalWidth, image.naturalHeight);
+      image.removeEventListener('load', imageOnLoad);
+      imageOnLoad = null;
+    };
+    image = new Image();
+    image.addEventListener('load', imageOnLoad);
+    image.setAttribute('alt', _imageAlt);
+    image.src = _imageUrl;
+    _el.appendChild(image);
     // load imagemap
     if (_svgUrl) {
       Xhr.ajax({
@@ -229,13 +235,13 @@ var SvgImageMap = function (options) {
         }
       });
     }
+    // clear options
+    options = null;
   };
 
   // save reference to parent destroy method
-  _this.destroy = Util.compose(function () {
-    // Stop listening for an image load event
-    _this.image.removeEventListener('load', _this.imageOnLoad);
-
+  _parentDestroy = _this.destroy;
+  _this.destroy = function () {
     _areas = null;
     _className = null;
     _el = null;
@@ -245,25 +251,16 @@ var SvgImageMap = function (options) {
     _svgUrl = null;
     _width = null;
 
-    _setSvg = null;
-
-    _initialize = null;
-    _this = null;
-  }, _this.destroy);
+    if (typeof _parentDestroy === 'function') {
+      _parentDestroy();
+    }
+  };
 
   /**
    * Access the areas array.
    */
   _this.getAreas = function () {
     return _areas;
-  };
-
-  /**
-   * Callback executed when image loads.
-   *
-   */
-  _this.onImageLoad = function () {
-    _this.setSize(_this.image.naturalWidth, _this.image.naturalHeight);
   };
 
   /**
@@ -362,8 +359,7 @@ var SvgImageMap = function (options) {
   };
 
 
-  _initialize(options);
-  options = null;
+  _initialize();
   return _this;
 };
 
