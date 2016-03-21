@@ -22,7 +22,8 @@ describe('SvgImageMap', function () {
 			/* jshint +W030 */
 		});
 
-		it('can be destroyed', function (done) {
+		// This test reproduces usgs/hazdev-svgimagemap#9
+		it('can be destroyed immediately', function (done) {
 			var imageMap,
 					originalSetSize;
 
