@@ -1,19 +1,49 @@
-/* global chai,describe,it */
+/* global chai, describe, it */
 'use strict';
 
-var expect = chai.expect;
+
 var SvgImageMap = require('svgimagemap/SvgImageMap');
+
+
+var expect = chai.expect;
 
 
 describe('SvgImageMap', function () {
 
-	var imageMap = SvgImageMap({
-			imageUrl: 'data/usb000ldeh_ciim.jpg',
-			mapUrl: 'data/usb000ldeh_ciim_imap.html'
+	describe('constructor', function () {
+		it('can be instantiated', function () {
+			var imageMap = SvgImageMap({
+				imageUrl: 'data/usb000ldeh_ciim.jpg',
+				mapUrl: 'data/usb000ldeh_ciim_imap.html'
+			});
+
+			/* jshint -W030 */
+			expect(imageMap).to.not.be.null;
+			/* jshint +W030 */
 		});
 
-	it('exists', function () {
-		expect(imageMap).to.not.equal(null);
+		it('can be destroyed', function (done) {
+			var imageMap,
+					originalSetSize;
+
+			imageMap = SvgImageMap({
+				imageUrl: 'data/usb000ldeh_ciim.jpg',
+				mapUrl: 'data/usb000ldeh_ciim_imap.html'
+			});
+
+			originalSetSize = imageMap.setSize;
+			imageMap.setSize = function () {
+				// Call underlying method
+				try {
+					originalSetSize.apply(imageMap, arguments);
+					done(); // Done, no error. Test passes.
+				} catch (e) {
+					done(e); // Done with error. Test fails.
+				}
+			};
+
+			imageMap.destroy();
+		});
 	});
 
 
