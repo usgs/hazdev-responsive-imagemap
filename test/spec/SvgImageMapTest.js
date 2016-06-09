@@ -59,9 +59,11 @@ describe('SvgImageMap', function () {
       });
 
       expect(circle).to.equal(
-          '<circle cx="X" cy="Y" r="R" xlink:href="#HREF">' +
-            '<title>TITLE</title>' +
-          '</circle>');
+          '<a xlink:href="#HREF">' +
+            '<circle cx="X" cy="Y" r="R">' +
+              '<title>TITLE</title>' +
+            '</circle>' +
+          '</a>');
     });
 
     it('handles "rect" shapes', function () {
@@ -73,9 +75,11 @@ describe('SvgImageMap', function () {
       });
 
       expect(rect).to.equal(
-          '<rect x="15" y="16" width="30" height="31" xlink:href="#HREF">' +
-            '<title>TITLE</title>' +
-          '</rect>');
+          '<a xlink:href="#HREF">' +
+            '<rect x="15" y="16" width="30" height="31">' +
+              '<title>TITLE</title>' +
+            '</rect>' +
+          '</a>');
     });
 
     it ('handles "poly" shapes', function () {
@@ -87,9 +91,11 @@ describe('SvgImageMap', function () {
       });
 
       expect(poly).to.equal(
-          '<path d="M1,2L3,4L5,6L1,2Z" xlink:href="#HREF">' +
-            '<title>TITLE</title>' +
-          '</path>');
+          '<a xlink:href="#HREF">' +
+            '<path d="M1,2L3,4L5,6L1,2Z">' +
+              '<title>TITLE</title>' +
+            '</path>' +
+          '</a>');
     });
 
   });
