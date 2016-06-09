@@ -104,7 +104,6 @@ var getPath = function (area) {
         ' cx="', coords[0], '"',
         ' cy="', coords[1], '"',
         ' r="', coords[2], '"',
-        href,
         '>', title, '</circle>');
   } else if (shape === 'rect') {
     // rectangle coords are x1,y1,x2,y2
@@ -114,7 +113,6 @@ var getPath = function (area) {
         ' y="', coords[1], '"',
         ' width="', coords[2]-coords[0], '"',
         ' height="', coords[3]-coords[1], '"',
-        href,
         '>', title, '</rect>');
   } else if (shape === 'poly') {
     // poly coords are x1,y1,x2,y2,...xN,yN
@@ -129,10 +127,12 @@ var getPath = function (area) {
     buf.push(
         '<path',
         ' d="', points.join(''), '"',
-        href,
         '>', title, '</path>');
   }
 
+  if (href !== '') {
+    return '<a' + href + '>' + buf.join('') + '</a>';
+  }
   return buf.join('');
 };
 

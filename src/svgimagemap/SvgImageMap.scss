@@ -17,8 +17,12 @@
     z-index:1;
     max-width:100%;
 
+    > a,
+    > a > circle,
     > circle,
+    > a > rect,
     > rect,
+    > a > path,
     > path {
       cursor: pointer;
       fill:transparent;

@@ -1,7 +1,7 @@
 /** add mouseover outline to paths. */
-.testsvg > svg > path:hover,
-.testsvg > svg > circle:hover,
-.testsvg > svg > rect:hover {
+.testsvg > svg > a > path:hover,
+.testsvg > svg > a > circle:hover,
+.testsvg > svg > a > rect:hover {
   stroke:#000;
   stroke-width:1;
 }
